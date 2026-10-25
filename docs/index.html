@@ -292,7 +292,7 @@ const CHAPTERS=[
   {k:"At work",h:"People who build things",p:"Crews, operators, engineers and the people who keep job sites running. We spend the day alongside them and let the work speak.",films:["Danny & Blair","Build AI That Matters","Can Your Code Do This?","Our Purpose"],img:"media/work.jpg",still:"Our Purpose · Cooper Tires"},
   {k:"In care",h:"Surgeons and the patients they treat",p:"Operating rooms, recovery and life afterwards. Films for hospitals and medical groups that stay close to the people involved, and handle them with care.",films:["Trey Roger's Story","Mark Rouse's Eyes","Nicole Watson","Always a Way: Tricia's Story"],thumbOf:"Mark Rouse's Eyes",still:"Mark Rouse's Eyes · Surgical Care Coalition"},
   {k:"In the studio",h:"Artists and the institutions behind them",p:"Painters, students and curators in the rooms where the work gets made, for museums and cultural partners.",films:["Letters and Lines","Bowls of Fruit","One Starry Night"],img:"media/studio.jpg",still:"One Starry Night · MoMA"},
-  {k:"Leadership",h:"Featuring the executives",p:"CEOs and leadership teams on camera, telling their company’s story in their own words, for brand launches, IPOs and internal films.",films:["Leadership Film","Name Reveal","Leadership Anthem","IPO Roadshow Film"],thumbOf:"Leadership Film",still:"Leadership Film · AIG"},
+  {k:"Leadership",h:"Featuring the executives",p:"CEOs and leadership teams on camera, telling their company’s story in their own words, for brand launches, IPOs and internal films.",films:["Leadership Film","Name Reveal","Leadership Anthem","IPO Roadshow Film"],img:"https://i.vimeocdn.com/video/2216729097-e8e8e970bd9d6f964c2d7995993743a6430f347dfa44040d56e1fd032b164c4d-d_1920",pos:"50% 72%",still:"Leadership Film · AIG"},
   {k:"Commercials",h:"We also do commercials",p:"Broadcast and online spots, made with the same eye for real people.",films:["A Different Sky","United Hands"],thumbOf:"A Different Sky",still:"A Different Sky · Textron Aviation"}
 ];
 const LABEL={dir:"Direction",dp:"Cinematography",prod:"Production"};
@@ -307,7 +307,7 @@ const grades=[["#1d2a33","#7a5a3a"],["#2b2420","#a8693a"],["#14232b","#4f7584"],
 const bg=i=>{const g=grades[i%grades.length];return `radial-gradient(120% 140% at ${30+(i*17)%50}% 60%, ${g[1]} 0%, ${g[0]} 55%, #08090a 100%)`};
 
 $('chapters').innerHTML=CHAPTERS.map(c=>`<section class="chapter">
-  <div class="img" style="background:#111 url('${c.img||thumb(first(WORK[byTitle(c.thumbOf)]).th,1920)}') center/cover no-repeat"><span>${esc(c.still)}</span></div>
+  <div class="img" style="background:#111 url('${c.img||thumb(first(WORK[byTitle(c.thumbOf)]).th,1920)}') ${c.pos||'center'}/cover no-repeat"><span>${esc(c.still)}</span></div>
   <div class="in body">
     <div><div class="eyebrow" style="color:var(--mute)">${esc(c.k)}</div><h3>${esc(c.h)}</h3></div>
     <div><p>${esc(c.p)}</p><ul class="films">${c.films.map(t=>{const w=WORK[byTitle(t)];return `<li><button type="button" data-open="${esc(t)}"><span class="t">${esc(t)}</span><span class="c">${esc(w.c)}</span></button></li>`}).join('')}</ul></div>

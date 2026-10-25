@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>New Monday Pictures · Documentary films about real people</title>
+<meta name="description" content="New Monday Pictures is a New York production company. We make films built around people for people, showcasing those who do the work.">
+<link rel="canonical" href="https://newmonday.pictures/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="New Monday Pictures">
+<meta property="og:title" content="New Monday Pictures">
+<meta property="og:description" content="We make films built around people for people, showcasing those who do the work.">
+<meta property="og:url" content="https://newmonday.pictures/">
+<meta property="og:image" content="https://newmonday.pictures/media/hero-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://i.vimeocdn.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: long single scroll in the V/SPEED pattern. Full-bleed reel hero, one featured film, three alternating full-width chapters about the people we film, the full work index, a "work with us" call, studio and footer. Type and palette carried over from alexcorndop.com. */
+:root{
+  --paper:#f3f3f1; --ink:#121314; --mute:#737579; --rule:#d9dad8; --tungsten:#c8742a; --frame:#16171a; --chip:#e6e6e3;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --gut:max(16px,env(safe-area-inset-left,0px));
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#0e0f10;--ink:#ecebe8;--mute:#8a8c8f;--rule:#26282a;--tungsten:#e08a3c;--frame:#000;--chip:#1c1d1f;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#0e0f10;--ink:#ecebe8;--mute:#8a8c8f;--rule:#26282a;--tungsten:#e08a3c;--frame:#000;--chip:#1c1d1f;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+img{max-width:100%;display:block}
+.skip{position:absolute;left:-999px;top:8px;z-index:30;background:var(--paper);color:var(--ink);padding:8px 12px}.skip:focus{left:16px}
+body{background:var(--paper);color:var(--ink);font-family:var(--display);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:#000}
+a{color:inherit}
+.in{max-width:1360px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+:focus-visible{outline:2px solid var(--tungsten);outline-offset:3px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+
+/* Header sits over the hero */
+header{position:absolute;inset:env(safe-area-inset-top,0px) 0 auto;z-index:6;color:#f3f3f1}
+header .in{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:10px 28px;padding-block:22px}
+.mark{font-weight:700;font-size:17px;letter-spacing:-.01em;text-decoration:none;display:flex;align-items:center;gap:9px}
+.mark i{width:8px;height:8px;border-radius:50%;background:var(--tungsten);display:inline-block}
+nav{display:flex;gap:24px}
+nav a{font-size:14px;text-decoration:none;opacity:.8}
+nav a:hover{opacity:1}
+
+/* Hero: full-bleed reel */
+.hero{position:relative;min-height:min(92vh,880px);display:flex;align-items:flex-end;color:#f3f3f1;overflow:hidden;
+  background:radial-gradient(120% 90% at 70% 35%,#6b4a2f 0%,#2a2119 40%,#0b0b0c 80%)}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.55) 100%)}
+.hero .in{position:relative;z-index:1;width:100%;padding-block:120px 48px;display:grid;gap:22px}
+.hero h1{margin:0;font-weight:700;font-stretch:62%;font-size:clamp(56px,11vw,168px);line-height:.86;letter-spacing:-.02em;text-transform:uppercase;max-width:12ch;text-wrap:balance}
+.hero p{margin:0;font-size:clamp(17px,1.8vw,22px);line-height:1.4;max-width:46ch;opacity:.92}
+.hero-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:500;text-decoration:none;padding:12px 18px;border:1px solid currentColor;border-radius:999px;background:transparent;color:inherit;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--tungsten);border-color:var(--tungsten);color:#fff}
+.btn.solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn.solid:hover{background:var(--tungsten);border-color:var(--tungsten);color:#fff}
+.mute{all:unset;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.8;border-bottom:1px solid rgba(255,255,255,.4)}
+.unused-ph-note{position:absolute;right:max(16px,env(safe-area-inset-right,0px));top:72px;z-index:1;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;opacity:.55}
+
+/* Featured film */
+.featured{padding-block:88px 72px}
+.featured .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:32px 56px;align-items:center}
+.featured h2{margin:12px 0 18px;font-stretch:62%;font-weight:700;font-size:clamp(44px,6.5vw,96px);line-height:.88;text-transform:uppercase;letter-spacing:-.015em}
+.featured p{margin:0 0 22px;font-size:clamp(17px,1.6vw,20px);line-height:1.5;max-width:44ch}
+.featured em{font-style:italic}
+.frame{position:relative;width:100%;max-width:100%;background:var(--frame);overflow:hidden;cursor:pointer;border:0;padding:0;display:block}
+.frame .play{position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:8px}
+.frame .play::before{content:"";width:0;height:0;border-left:9px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent}
+
+/* Chapters: full-width image, uppercase heading, short paragraph, film links */
+.chapter{border-top:1px solid var(--rule)}
+.chapter .img{width:100%;aspect-ratio:21/9;max-height:72vh;position:relative}
+.chapter .img span{text-shadow:0 1px 3px rgba(0,0,0,.6);position:absolute;left:max(16px,env(safe-area-inset-left,0px));bottom:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#fff;opacity:.65}
+.chapter .body{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:20px 56px;padding-block:40px 64px}
+.chapter h3{margin:6px 0 0;font-stretch:62%;font-weight:700;font-size:clamp(40px,5.5vw,80px);line-height:.9;text-transform:uppercase;letter-spacing:-.015em}
+.chapter p{margin:0 0 20px;font-size:clamp(17px,1.6vw,20px);line-height:1.5;max-width:46ch}
+.films{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.films button{all:unset;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;width:100%;padding:10px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.films button:focus-visible{outline:2px solid var(--tungsten);outline-offset:2px}
+.films .t{font-weight:600;font-size:18px}
+.films .c{font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--mute);text-align:right}
+.films button:hover .t{color:var(--tungsten)}
+
+/* Work index */
+.work{padding-block:72px 40px;border-top:1px solid var(--rule)}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:10px 24px;padding-bottom:16px;border-bottom:1px solid var(--rule)}
+.toggle{all:unset;cursor:pointer;display:flex;align-items:baseline;gap:12px}
+.toggle:focus-visible{outline:2px solid var(--tungsten);outline-offset:3px}
+.toggle .count{font-family:var(--mono);font-size:12px;color:var(--mute)}
+.toggle .chev{font-size:22px;line-height:1;transition:transform .25s}
+.toggle[aria-expanded="true"] .chev{transform:rotate(45deg)}
+.toggle:hover .eyebrow{color:var(--tungsten)}
+.work .filters{visibility:hidden}
+.work.open .filters{visibility:visible}
+.filters{display:flex;flex-wrap:wrap;gap:6px}
+.filters button{all:unset;cursor:pointer;font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--rule);border-radius:999px;color:var(--mute)}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.filters button:focus-visible{outline:2px solid var(--tungsten);outline-offset:2px}
+.list{list-style:none;margin:0;padding:0}
+.row{all:unset;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,15rem) minmax(0,13rem);gap:4px 24px;align-items:baseline;padding-block:10px 12px;border-bottom:1px solid var(--rule);width:100%}
+.row:focus-visible{outline:2px solid var(--tungsten);outline-offset:2px}
+.title{font-stretch:68%;font-weight:600;font-size:clamp(26px,3.4vw,46px);line-height:1;letter-spacing:-.012em;text-transform:uppercase;min-width:0;text-wrap:balance;transition:color .2s}
+.client{font-size:14px;color:var(--mute);min-width:0}
+.did{display:flex;flex-wrap:wrap;gap:5px;justify-content:flex-end}
+.tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;background:var(--chip);padding:2px 7px;border-radius:2px}
+@media (hover:hover){.list:hover .row .title{color:var(--rule)}.list:hover .row:hover .title{color:var(--ink)}}
+.peek{position:fixed;left:50%;top:50%;width:min(30vw,400px);aspect-ratio:16/9;pointer-events:none;z-index:4;opacity:0;transform:translate(-50%,-50%) scale(.97);transition:opacity .35s,transform .45s}
+.peek.on{opacity:.95;transform:translate(-50%,-50%) scale(1)}
+@media (hover:none),(max-width:760px){.peek{display:none}}
+
+/* Work with us */
+.cta{background:var(--ink);color:var(--paper);margin-top:56px}
+.cta .in{padding-block:88px 80px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px 56px;align-items:end}
+.cta h2{margin:0;font-stretch:62%;font-weight:700;font-size:clamp(56px,9vw,136px);line-height:.86;text-transform:uppercase;letter-spacing:-.02em}
+.cta p{margin:0 0 22px;font-size:clamp(17px,1.6vw,20px);line-height:1.5;max-width:44ch;opacity:.9}
+.cta .btn{color:var(--paper)}
+.cta .next{display:inline-block;margin-left:18px;font-size:14px;opacity:.75;text-decoration:none}
+.cta .next:hover{opacity:1}
+
+/* About */
+.about{padding-block:72px 40px}
+.about .grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px 56px;padding-top:24px}
+.about p{margin:0 0 1em;font-size:clamp(18px,1.8vw,22px);line-height:1.45;max-width:56ch}
+.person{border-top:1px solid var(--rule);padding-top:14px;display:grid;gap:4px;align-content:start}
+.person .n{font-size:22px;font-weight:600}
+.person a{color:var(--mute)}
+.contact-lines{display:grid;gap:10px;margin-top:22px}
+.contact-lines span{user-select:all;font-size:19px}
+.copy{all:unset;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--tungsten);margin-left:10px}
+
+footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;padding-block:22px 32px;border-top:1px solid var(--rule);color:var(--mute);font-size:13px}
+footer nav a{opacity:1}
+
+/* Film sheet */
+.sheet{position:fixed;inset:0;z-index:20;background:var(--paper);overflow:auto;padding:calc(env(safe-area-inset-top,0px) + 20px) max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px))}
+.sheet-in{max-width:1180px;margin:0 auto;display:grid;gap:22px}
+.sheet-top{display:flex;justify-content:space-between;gap:16px;color:var(--mute)}
+.btn-text{all:unset;cursor:pointer;font-size:14px;color:var(--mute)}
+.btn-text:hover{color:var(--ink)}
+.player{position:relative;width:100%;max-width:100%;max-height:78vh;background:var(--frame);margin-inline:auto}
+.player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.cut{display:grid;gap:8px}
+.cut-label{display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.cut-label span:first-child{color:var(--ink)}
+.sheet h3{margin:0;font-stretch:68%;font-weight:600;font-size:clamp(32px,5vw,60px);line-height:1;text-transform:uppercase}
+.credits{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px 32px;border-top:1px solid var(--rule);padding-top:16px;margin:0}
+.credits dt{font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.06em;text-transform:uppercase}
+.credits dd{margin:2px 0 0}
+.nav2{display:flex;justify-content:space-between;gap:16px}
+
+@media (max-width:860px){
+  .featured .grid,.chapter .body,.cta .in,.about .grid{grid-template-columns:1fr}
+  .chapter .img{aspect-ratio:16/10}
+  .row{grid-template-columns:minmax(0,1fr) auto}
+  .client{grid-column:1;grid-row:2}
+  .did{grid-row:1 / span 2;grid-column:2;align-self:center;flex-direction:column;align-items:flex-end}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="in">
+  <a class="mark" href="#top"><i aria-hidden="true"></i>New Monday Pictures</a>
+  <nav aria-label="Sections"><a href="#about">About</a><a href="#work">Work</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main id="main">
+<section class="hero" id="top">
+  <video class="hero-video" src="media/hero.mp4" poster="media/hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+  <div class="in">
+    <div class="eyebrow">Documentary for brands and institutions</div>
+    <h1>Real people, as they work and live.</h1>
+    <div class="hero-row">
+      <p>We make films built around people for people, showcasing those who do the work.</p>
+      <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+        <a class="btn" href="#featured">See the work</a>
+        <button class="mute" type="button" id="pauseBtn" aria-pressed="false">Pause</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured" id="featured"><div class="in"><div class="grid">
+  <div>
+    <div class="eyebrow" style="color:var(--mute)">Featured film</div>
+    <h2>Letters and Lines</h2>
+    <p>For the <b>Smithsonian’s National Portrait Gallery</b>, we followed artist <b>Kenturah Davis</b> through the making of her portrait of <b>Ava DuVernay</b>, from the first marks to the finished work.</p>
+    <button class="btn solid" type="button" data-open="Letters and Lines">Watch the film</button>
+  </div>
+  <button class="frame" type="button" data-open="Letters and Lines" aria-label="Play Letters and Lines" style="aspect-ratio:1920/716;background:#000 url(media/featured.jpg) center/cover no-repeat"><span class="play">Play · 2:41 · 2.39 : 1</span></button>
+</div></div></section>
+
+<div id="chapters"></div>
+
+<section class="work" id="work"><div class="in">
+  <div class="sec-head">
+    <button class="toggle" type="button" id="workToggle" aria-expanded="false" aria-controls="workBody"><span class="eyebrow">All work</span><span class="count" id="workCount"></span><span class="chev" aria-hidden="true">+</span></button>
+    <div class="filters" role="group" aria-label="Filter work">
+      <button type="button" data-f="all" aria-pressed="true">All</button>
+      <button type="button" data-f="dir" aria-pressed="false">Direction</button>
+      <button type="button" data-f="dp" aria-pressed="false">Cinematography</button>
+      <button type="button" data-f="prod" aria-pressed="false">Production</button>
+    </div>
+  </div>
+  <div id="workBody" hidden><div class="list" id="list"></div></div>
+</div></section>
+
+<section class="cta" id="contact"><div class="in">
+  <h2>Work with us</h2>
+  <div>
+    <p>We direct, shoot and produce, from a two-person interview to a full crew. Tell us who you want to film and we’ll find the story.</p>
+    <a class="btn" href="#about">Let’s talk</a><a class="next" href="#about">Continue to About →</a>
+  </div>
+</div></section>
+
+<section class="about" id="about"><div class="in">
+  <div class="sec-head"><div class="eyebrow">About</div></div>
+  <div class="grid">
+    <div>
+      <p>New Monday Pictures is led by Alex Corn, who has spent almost two decades filming surgeons, patients, artists, engineers and crews for brands and cultural institutions.</p>
+    </div>
+    <div class="person">
+      <div class="eyebrow" style="color:var(--mute)">Founder</div>
+      <div class="n">Alex Corn</div>
+      <div><a href="https://alexcorndop.com" target="_blank" rel="noopener">alexcorndop.com ↗</a></div>
+      <div class="contact-lines">
+        <div><span>alex@newmonday.pictures</span><button class="copy" type="button" data-copy="alex@newmonday.pictures">Copy</button></div>
+        <div><span>347.577.2997</span><button class="copy" type="button" data-copy="347.577.2997">Copy</button></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+</main>
+
+<footer><div class="in">
+  <div>© <span id="yr">2026</span> New Monday Pictures · New York</div>
+  <nav aria-label="Footer"><a href="#about">About</a><a href="#work">Work</a><a href="#contact">Contact</a></nav>
+</div></footer>
+
+<div class="peek" id="peek" aria-hidden="true"></div>
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle"></div>
+
+<script>
+const WORK=[
+  {"v": "883437301", "th": "1756161168-d765d4ab2b6ba907faf54790c27bd3e53b6621791ea1eac3c1c3760c34de2d89-d", "w": 1920, "h": 1080, "d": 161,t:"Letters and Lines",c:"Smithsonian National Portrait Gallery",r:["dir","dp"],d:161,ar:2.39,cr:"Agency: Brunswick Creative. Producer: Talya Davidoff."},
+  {"v": "884484185", "th": "1756161718-6ceac50b6bf40af83874953e7a69d76a8ca9ebceb6a5430098ea0e1bbcb6af8a-d", "w": 1920, "h": 1080, "d": 60,t:"Can Your Code Do This?",c:"CAT",r:["dir"],d:60},
+  {"v": "1239271151", "th": "2216720426-15bc83f072dabda3d804d03ebb1206f89adb1b5ab37dccd832124ef2eb83446e-d", "w": 1920, "h": 1080, "d": 93,t:"Build AI That Matters",c:"Prime Video",r:["dir","dp"],d:93},
+  {"v": "884484152", "th": "1756162008-0b3bcfe585ebb5617f93918917881931cc8bf237346c6cfb9266b001006cf20d-d", "w": 1920, "h": 1080, "d": 91,t:"HyperConnected Networks",c:"PwC",r:["dir"],d:91},
+  {t:"A Different Sky",c:"Textron Aviation",r:["prod"],cuts:[{"v": "884483808", "th": "1753588833-879cc6b9fde2af96e3585fec346452dbe3af0d9e363d561fe80ff1253d66b5e5-d", "w": 1920, "h": 1080, "d": 60, "label": "Broadcast"}, {"v": "884483204", "th": "1756162837-e3ac94b2b4b7c5740ed3d457033c1e639bffdb51c2c9e516aa8f59f40ef5add6-d", "w": 1920, "h": 912, "d": 105, "label": "Director's Cut"}],cr:"Agency: Brunswick Creative. Director: Greg Wilson. DP: Eli Marias."},
+  {"v": "1019498460", "th": "1937886964-3ce24517569158422d72e98c9173a89833c01f72113f0b9cc362887e67437cfe-d", "w": 1920, "h": 1080, "d": 60,t:"myMobility",c:"PwC",r:["dir"],d:60},
+  {"v": "884483121", "th": "1756162951-6af90e1f2e38c872dcdeb71b0136fa6b7af61059d20802dc1e8d99b55adfb704-d", "w": 1920, "h": 1080, "d": 76,t:"Real Time",c:"Philips Lumify",r:["prod"],d:76},
+  {"v": "884483859", "th": "1756162228-c0f9b2fa012dba08eb336a935f6bf9cde3453568925d57e90907523dc9f9f945-d", "w": 3200, "h": 1800, "d": 125,t:"Our Purpose",c:"Cooper Tires",r:["dir"],d:125},
+  {"v": "887334140", "th": "1759232787-0b3dd1cf429f26eb6b374a458449b882475bdced9d975cfc97afd994beb1a7d7-d", "w": 1920, "h": 1080, "d": 30,t:"United Hands",c:"University of Miami",r:["prod"],d:30},
+  {"v": "884483282", "th": "1756162679-1b9be8171dbfd380db1ba17f50b6f2370e3832d11fff40d204fab2fe3f5f1426-d", "w": 1920, "h": 1080, "d": 119,t:"2030 Vision",c:"Genmab",r:["dir"],d:119},
+  {"v": "1019506901", "th": "1937896556-595e2f9ee6e4e2cb3b16a12636bc6275c310b7eaaf3c6119fb274787fc6a6971-d", "w": 1920, "h": 1080, "d": 60,t:"Making Money Work for the World",c:"BNY",r:["prod"],d:60},
+  {"v": "884482808", "th": "1756163042-f72a62deed84b1bc39fd1dc5aebc8d2a38c63bfe85fcba077d00ec24468190db-d", "w": 1920, "h": 1080, "d": 260,t:"One Starry Night",c:"LaGuardia Community College / MoMA",r:["dp"],d:260},
+  {"v": "1019497294", "th": "1937885439-82e5341fb2778809e5b29e0364b800d16829ac01c9b20d8e16c782cee856da09-d", "w": 1920, "h": 1080, "d": 121,t:"Always a Way: Tricia's Story",c:"Philips",r:["dp"],d:121},
+  {"v": "1019498252", "th": "1937886324-9ce6288635fd6d062dda7d328ff860289a71334d0c46d5a7d6c9e25725fe08cf-d", "w": 1920, "h": 1080, "d": 95,t:"Risk & Regulatory",c:"PwC",r:["dir"],d:95},
+  {"v": "1059862476", "th": "1986293517-226cef6b4ce1ab8fd2cdef34cc0b64708c0958444daddd6fa6228ef864177f14-d", "w": 1920, "h": 1080, "d": 95,t:"Brand Film",c:"Genmab",r:["dir"],d:95},
+  {"v": "884484221", "th": "1756161403-ada86f9ba7d081ce12c8641c77a621c67327fe0d13cb33ea04d0b819c185394c-d", "w": 3840, "h": 2160, "d": 196,t:"Trey Roger's Story",c:"American College of Surgeons",r:["dir"],d:196},
+  {"v": "884484571", "th": "1756161286-bf4928931bace6bbab85100aa2dc7dd9a784a12833bc7308cf1e08475f26b0fa-d", "w": 1920, "h": 1080, "d": 156,t:"Mark Rouse's Eyes",c:"Surgical Care Coalition",r:["dir"],d:156},
+  {"v": "884484431", "th": "1753585336-b0119f15776884757acfcc46fe46f981cfa88de58833d7ac4bd1a3d5cc6778d9-d", "w": 1920, "h": 816, "d": 158, "hs": "8700788567",t:"Nicole Watson",c:"American College of Surgeons",r:["dir"],d:158,ar:2.35},
+  {"v": "1019495358", "th": "1937882847-d1038b43b918c02428189b7a294c082fb1255be403a0a660235d3d585ee91fe5-d", "w": 1920, "h": 1080, "d": 65,t:"Anthem Film",c:"Kellanova",r:["dir"],d:65},
+  {"v": "1019497072", "th": "1937884722-fcc272126d30c7a041ba7189164e049388a96ebf08fe75e7ac59f31a94271e3c-d", "w": 1920, "h": 1080, "d": 160,t:"Leadership Anthem",c:"Kellanova",r:["prod"],d:160},
+  {"v": "1019496661", "th": "1937884685-6c2002a61c20f60727cbeaeeeda8c088f35478690ae55621719172e45df3af59-d", "w": 1920, "h": 1080, "d": 196,t:"Leadership Film",c:"AIG",r:["dir"],d:196},
+  {"v": "1019495871", "th": "1937884163-66a000b32094e9677bf98a10784232b574c72f3da2e2da2118b5b37cee9fcfa7-d", "w": 1920, "h": 1080, "d": 384,t:"IPO Roadshow Film",c:"AssetMark",r:["dir"],d:384},
+  {"v": "884483458", "th": "1756162404-d71f4f6bc2aafde84439ca8c559818b5f199e4c91ff1400480362bfd49ef96fe-d", "w": 1920, "h": 1080, "d": 137,t:"The Age of Prediction",c:"WorldQuant",r:["dir"],d:137},
+  {"v": "1019498065", "th": "1937886077-f04df97155e2f87741eb4c8d16efce7360ddfb7430785eeec63c00ff10a45888-d", "w": 1920, "h": 1080, "d": 79,t:"Name Reveal",c:"Kellogg's",r:["prod"],d:79},
+  {"v": "1019495237", "th": "1937882569-6d46cbea9c8a8da027788b2f4038260418a6b37336944aca55bc28e428e4dcc1-d", "w": 1920, "h": 1080, "d": 74,t:"We Are Avanos",c:"Avanos",r:["prod"],d:74},
+  {"v": "884483393", "th": "1753583981-6bacb4e50342239869af2f315d80c0c049a4a877db60238806513bc8d460f6ab-d", "w": 1920, "h": 1080, "d": 167,t:"Bowls of Fruit",c:"FAMSF / de Young",r:["prod"],d:167},
+  {t:"Danny & Blair",c:"United Rentals",r:["dir"],cuts:[{"v": "884483936", "th": "1756162122-8a628271620ff4d827969bffc1d232db2278278ec86b100322c26ea169c51887-d", "w": 2048, "h": 1152, "d": 128, "label": "Danny"}, {"v": "884484039", "th": "1753586043-556b2da44270878e92e62bd5fa89440edfa6ec32dd48fd29a40e8515f11808cf-d", "w": 2048, "h": 1152, "d": 131, "hs": "7106bfab67", "label": "Blair"}]},
+  {"v": "884482625", "th": "1753583036-a9a3f5b72ae0e7c36cc15d63c45b6a7b9606a457fd0ce4a99ac097bfbe6b51d3-d", "w": 1920, "h": 1080, "d": 87, "hs": "1b8552afee",t:"Software Film",c:"Philips",r:["dp"],d:87},
+  {"v": "884482753", "th": "1753582884-aae0d349e152ab106842590448dbabeccd14f02d1c3389e2ea13efc5eece42bc-d", "w": 1920, "h": 1080, "d": 147, "hs": "9f65d3116f",t:"The History of Caliber",c:"Caliber",r:["dp"],d:147},
+  {"v": "228828887", "th": "1756163365-e0ee1b810e00069d1fa6cca8a4ad5d31c63c54d72f7b8ba31069770db002ce50-d", "w": 1920, "h": 1008, "d": 248,t:"Color",c:"Sony CineAlta",r:["prod"],d:248},
+  {"v": "228828947", "th": "1756163257-a98195cf3e08b1a89c11ea9618b97ec4a65bd080edd88db1932ae722de9f57b1-d", "w": 1920, "h": 856, "d": 553,t:"Winter's Hold",c:"Dir. Ian Voglesong",r:["dp"],d:553},
+  {"v": "14361507", "th": "93186647-f460966ffcd1129d27063792b8ec5b02f83c899686bb5d6019a00e7260371a60-d", "w": 1280, "h": 720, "d": 250,t:"Poor Old Boy",c:"Short film",r:["dp"],d:250}
+];
+// Chapters group films by the people in them.
+const CHAPTERS=[
+  {k:"At work",h:"People who build things",p:"Crews, operators, engineers and the people who keep job sites running. We spend the day alongside them and let the work speak.",films:["Danny & Blair","Build AI That Matters","Can Your Code Do This?","Our Purpose"],img:"media/work.jpg",still:"Our Purpose · Cooper Tires"},
+  {k:"In care",h:"Surgeons and the patients they treat",p:"Operating rooms, recovery and life afterwards. Films for hospitals and medical groups that stay close to the people involved, and handle them with care.",films:["Trey Roger's Story","Mark Rouse's Eyes","Nicole Watson","Always a Way: Tricia's Story"],img:"media/care.jpg",still:"Always a Way · Philips"},
+  {k:"In the studio",h:"Artists and the institutions behind them",p:"Painters, students and curators in the rooms where the work gets made, for museums and cultural partners.",films:["Letters and Lines","Bowls of Fruit","One Starry Night"],img:"media/studio.jpg",still:"One Starry Night · MoMA"},
+  {k:"Leadership",h:"Featuring the executives",p:"CEOs and leadership teams on camera, telling their company’s story in their own words, for brand launches, IPOs and internal films.",films:["Leadership Film","Name Reveal","Leadership Anthem","IPO Roadshow Film"],thumbOf:"Leadership Film",still:"Leadership Film · AIG"},
+  {k:"Commercials",h:"We also do commercials",p:"Broadcast and online spots, made with the same eye for real people.",films:["A Different Sky","United Hands"],thumbOf:"A Different Sky",still:"A Different Sky · Textron Aviation"}
+];
+const LABEL={dir:"Direction",dp:"Cinematography",prod:"Production"};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+const rt=s=>Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
+const byTitle=t=>WORK.findIndex(w=>w.t===t);
+const total=w=>w.cuts?w.cuts.reduce((a,c)=>a+c.d,0):w.d;
+const thumb=(id,w)=>`https://i.vimeocdn.com/video/${id}_${w||960}`;
+const first=w=>w.cuts?w.cuts[0]:w;
+const grades=[["#1d2a33","#7a5a3a"],["#2b2420","#a8693a"],["#14232b","#4f7584"],["#271f2c","#8c6a5a"],["#1b2420","#6f7a55"],["#2a2a2c","#8a8f96"]];
+const bg=i=>{const g=grades[i%grades.length];return `radial-gradient(120% 140% at ${30+(i*17)%50}% 60%, ${g[1]} 0%, ${g[0]} 55%, #08090a 100%)`};
+
+$('chapters').innerHTML=CHAPTERS.map(c=>`<section class="chapter">
+  <div class="img" style="background:#111 url('${c.img||thumb(first(WORK[byTitle(c.thumbOf)]).th,1920)}') center/cover no-repeat"><span>${esc(c.still)}</span></div>
+  <div class="in body">
+    <div><div class="eyebrow" style="color:var(--mute)">${esc(c.k)}</div><h3>${esc(c.h)}</h3></div>
+    <div><p>${esc(c.p)}</p><ul class="films">${c.films.map(t=>{const w=WORK[byTitle(t)];return `<li><button type="button" data-open="${esc(t)}"><span class="t">${esc(t)}</span><span class="c">${esc(w.c)}</span></button></li>`}).join('')}</ul></div>
+  </div></section>`).join('');
+
+let filter="all", seq=WORK.map((_,i)=>i), openPos=-1, lastFocus=null;
+function renderList(){
+  const idx=WORK.map((w,i)=>i).filter(i=>filter==='all'||WORK[i].r.includes(filter));
+  $('list').innerHTML=idx.map(i=>{const w=WORK[i];return `<button class="row" type="button" data-i="${i}"><span class="title">${esc(w.t)}</span><span class="client">${esc(w.c)}</span><span class="did">${w.cuts?`<span class="tag">${w.cuts.length} ${w.t==='A Different Sky'?'cuts':'films'}</span>`:''}${w.r.map(r=>`<span class="tag">${LABEL[r]}</span>`).join('')}</span></button>`}).join('');
+  $('list').querySelectorAll('.row').forEach(r=>{
+    const i=+r.dataset.i;
+    r.addEventListener('mouseenter',()=>{$('peek').style.background=`#111 url('${thumb(first(WORK[i]).th)}') center/cover no-repeat`;$('peek').classList.add('on')});
+    r.addEventListener('mouseleave',()=>$('peek').classList.remove('on'));
+    r.addEventListener('click',()=>open(idx,idx.indexOf(i)));
+  });
+}
+document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.f;document.querySelectorAll('.filters button').forEach(x=>x.setAttribute('aria-pressed',x===b));renderList()}));
+document.addEventListener('click',e=>{
+  const o=e.target.closest('[data-open]'); if(o){const i=byTitle(o.dataset.open); open(WORK.map((_,k)=>k),i); return}
+  const c=e.target.closest('.copy'); if(c){try{navigator.clipboard.writeText(c.dataset.copy).then(()=>{c.textContent='Copied';setTimeout(()=>c.textContent='Copy',1400)},()=>{})}catch(err){}}
+});
+const heroV=document.querySelector('.hero-video');
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){heroV.pause();heroV.removeAttribute('autoplay')}
+$('pauseBtn').addEventListener('click',e=>{const b=e.currentTarget;if(heroV.paused){heroV.play().catch(()=>{});b.textContent='Pause';b.setAttribute('aria-pressed','false')}else{heroV.pause();b.textContent='Play';b.setAttribute('aria-pressed','true')}});
+
+function open(list,pos){
+  seq=list;openPos=pos;const i=seq[pos],w=WORK[i],n=seq.length,prev=WORK[seq[(pos-1+n)%n]],next=WORK[seq[(pos+1)%n]];
+  $('peek').classList.remove('on'); if(!lastFocus)lastFocus=document.activeElement;
+  $('sheet').innerHTML=`<div class="sheet-in">
+    <div class="sheet-top"><span class="eyebrow">${pos+1} / ${n}</span><button class="btn-text" id="closeBtn" type="button">Close</button></div>
+    ${(w.cuts||[w]).map((c,k)=>`<div class="cut">${w.cuts?`<div class="cut-label"><span>${esc(c.label)}</span><span>${rt(c.d)}</span></div>`:''}<div class="player" style="aspect-ratio:${c.w}/${c.h}"><iframe src="https://player.vimeo.com/video/${c.v}?${c.hs?'h='+c.hs+'&':''}title=0&byline=0&portrait=0&dnt=1${k===0?'&autoplay=1':''}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="${esc(w.t)}${w.cuts?' · '+esc(c.label):''}"></iframe></div></div>`).join('')}
+    <h3 id="sheetTitle">${esc(w.t)}</h3>
+    <dl class="credits">
+      <div><dt>Client</dt><dd>${esc(w.c)}</dd></div>
+      <div><dt>New Monday</dt><dd>${w.r.map(r=>LABEL[r]).join(', ')}</dd></div>
+      ${w.cuts?`<div><dt>Films</dt><dd>${w.cuts.map(c=>esc(c.label)+' '+rt(c.d)).join(' · ')}</dd></div>`:`<div><dt>Runtime</dt><dd>${rt(w.d)}</dd></div>`}
+      ${w.ar===2.39?`<div><dt>Aspect ratio</dt><dd>2.39 : 1</dd></div>`:''}
+      ${w.cr?`<div><dt>Credits</dt><dd>${esc(w.cr)}</dd></div>`:''}
+    </dl>
+    <div class="nav2"><button class="btn-text" id="prevBtn" type="button">← ${esc(prev.t)}</button><button class="btn-text" id="nextBtn" type="button">${esc(next.t)} →</button></div></div>`;
+  $('sheet').hidden=false;document.body.style.overflow='hidden';
+  $('closeBtn').onclick=close;$('prevBtn').onclick=()=>open(seq,(pos-1+n)%n);$('nextBtn').onclick=()=>open(seq,(pos+1)%n);$('closeBtn').focus();
+}
+function close(){$('sheet').hidden=true;$('sheet').innerHTML='';document.body.style.overflow='';if(lastFocus&&lastFocus.focus)lastFocus.focus();lastFocus=null}
+document.addEventListener('keydown',e=>{if($('sheet').hidden)return;const n=seq.length;if(e.key==='Escape')close();if(e.key==='ArrowRight')open(seq,(openPos+1)%n);if(e.key==='ArrowLeft')open(seq,(openPos-1+n)%n)});
+$('workCount').textContent=WORK.length+' films';
+$('workToggle').addEventListener('click',()=>{const t=$('workToggle'),on=t.getAttribute('aria-expanded')!=='true';t.setAttribute('aria-expanded',on);$('workBody').hidden=!on;$('work').classList.toggle('open',on)});
+renderList();
+$('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

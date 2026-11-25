@@ -17,13 +17,14 @@
 <link rel="preconnect" href="https://i.vimeocdn.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200..500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap">
 <style>
 /* Layout: long single scroll in the V/SPEED pattern. Full-bleed reel hero, one featured film, three alternating full-width chapters about the people we film, the full work index, a "work with us" call, studio and footer. Type and palette carried over from alexcorndop.com. */
 :root{
   --paper:#f3f3f1; --ink:#121314; --mute:#737579; --rule:#d9dad8; --tungsten:#c8742a; --frame:#16171a; --chip:#e6e6e3;
-  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --display:"DM Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"DM Sans","Helvetica Neue",Arial,sans-serif;
+  --serif:"Cormorant Garamond","Iowan Old Style",Georgia,serif;
   --gut:max(16px,env(safe-area-inset-left,0px));
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#0e0f10;--ink:#ecebe8;--mute:#8a8c8f;--rule:#26282a;--tungsten:#e08a3c;--frame:#000;--chip:#1c1d1f;color-scheme:dark}}
@@ -157,6 +158,30 @@ footer nav a{opacity:1}
 .credits dt{font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.06em;text-transform:uppercase}
 .credits dd{margin:2px 0 0}
 .nav2{display:flex;justify-content:space-between;gap:16px}
+
+
+/* New Monday brand layer: DM Sans (light, tracked caps) for titles and labels, Cormorant Garamond for body copy,
+   outlined 4px buttons, 1px rules. Colours stay on the existing tokens above. */
+body{font-weight:300}
+.eyebrow,.cut-label,.credits dt,.tag,.filters button,.toggle .count,.frame .play,.chapter .img span,.films .c,.mute,.copy,.sheet-top .eyebrow{font-family:var(--display);font-size:10.5px;font-weight:400;letter-spacing:2px;text-transform:uppercase}
+.mark{font-weight:400;font-size:13px;letter-spacing:3px;text-transform:uppercase}
+nav a{font-size:11px;font-weight:400;letter-spacing:2px;text-transform:uppercase}
+.hero h1,.featured h2,.chapter h3,.cta h2,.sheet h3,.title{font-family:var(--display);font-stretch:normal;font-weight:300;text-transform:uppercase;letter-spacing:1.4px;line-height:1.08}
+.hero h1{font-weight:200;font-size:clamp(34px,5vw,68px);letter-spacing:.06em;max-width:18ch}
+.featured h2{font-size:clamp(28px,3.4vw,44px);margin:14px 0 20px}
+.chapter h3{font-size:clamp(24px,2.8vw,34px)}
+.cta h2{font-weight:200;font-size:clamp(34px,4.6vw,60px);letter-spacing:.06em}
+.sheet h3{font-size:clamp(26px,3.4vw,40px)}
+.title{font-size:clamp(18px,2vw,26px);line-height:1.15}
+.hero p,.featured p,.chapter p,.cta p,.about p{font-family:var(--serif);font-weight:400;font-size:clamp(20px,1.9vw,24px);line-height:1.42}
+.hero p{font-style:italic}
+.client{font-family:var(--serif);font-style:italic;font-size:17px}
+.films .t{font-weight:400;font-size:17px;letter-spacing:.2px}
+.person .n{font-weight:400;font-size:20px;letter-spacing:1.4px;text-transform:uppercase}
+.credits dd,.contact-lines span{font-family:var(--serif);font-size:19px}
+.btn{border-radius:4px;padding:14px 36px;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase}
+.filters button{border-radius:4px;padding:6px 12px}
+.tag{border-radius:2px}
 
 @media (max-width:860px){
   .featured .grid,.chapter .body,.cta .in,.about .grid{grid-template-columns:1fr}
